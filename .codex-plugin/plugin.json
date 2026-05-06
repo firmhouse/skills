@@ -1,0 +1,26 @@
+{
+  "name": "firmhouse",
+  "version": "0.1",
+  "description": "This is a plugin for OpenAI Codex that allows you to use the Firmhouse skills.",
+  "homepage": "https://firmhouse.com",
+  "repository": "https://github.com/firmhouse/skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Firmhouse",
+    "shortDescription": "This is a plugin for OpenAI Codex that allows you to use the Firmhouse skills.",
+    "longDescription": "This is a plugin for OpenAI Codex that allows you to use the Firmhouse skills.",
+    "developerName": "Firmhouse",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://firmhouse.com",
+    "privacyPolicyURL": "https://firmhouse.com/privacy",
+    "termsOfServiceURL": "https://firmhouse.com/terms"
+  }
+}

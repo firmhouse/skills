@@ -32,7 +32,7 @@ Tell the user they need to:
 2. Ensure the workspace `.gitignore` includes `.env` so secrets are not committed.
 3. Add a workspace `.env.sample` file that documents the expected token variable, for example `FIRMHOUSE_API_TOKEN=<token>`.
 4. Create a workspace `.env` file with `FIRMHOUSE_API_TOKEN`.
-5. If the template files do not exist locally yet, retrieve all templates, write them to the workspace, and commit that baseline before making changes.
+5. Copy the relevant template files into the merchant repository themselves before making changes, then commit that baseline locally.
 
 If the token configuration is missing, stop after explaining the setup and ask the user to add it before continuing.
 
@@ -46,12 +46,11 @@ Follow this sequence:
 4. Check the SSCv2 docs at `https://docs.firmhouse.com/self-service-center-v2/components/overview` before planning changes.
 5. Resolve the target template file from [references/available_templates.md](references/available_templates.md).
 6. Fetch the current merchant template with `scripts/get_ssc_template.py`.
-7. When the workspace does not already contain the templates, fetch all templates and write them to the workspace before editing.
-8. Propose a full updated Liquid body, not a partial snippet, unless the user explicitly asks for a partial.
-9. Save the updated template body into the current workspace before publishing so the applied version is tracked locally.
-10. Apply the update with `scripts/update_ssc_template.py`.
-11. If GraphQL returns validation errors, fix the full body and retry.
-12. Keep the helper scripts inside this plugin; do not copy them into the merchant repository unless the user explicitly asks for that.
+7. Propose a full updated Liquid body, not a partial snippet, unless the user explicitly asks for a partial.
+8. Save the updated template body into the current workspace before publishing so the applied version is tracked locally.
+9. Apply the update with `scripts/update_ssc_template.py`.
+10. If GraphQL returns validation errors, fix the full body and retry.
+11. Keep the helper scripts inside this plugin; do not copy them into the merchant repository unless the user explicitly asks for that.
 
 ## Commands
 
@@ -59,13 +58,6 @@ Follow this sequence:
 
 ```bash
 python3 scripts/get_ssc_template.py
-```
-
-### Read all templates and write them into the workspace
-
-```bash
-python3 scripts/get_ssc_template.py \
-  --write-to-dir "$PWD"
 ```
 
 ### Read one template

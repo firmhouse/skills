@@ -51,6 +51,7 @@ Follow this sequence:
 9. Save the updated template body into the current workspace before publishing so the applied version is tracked locally.
 10. Apply the update with `scripts/update_ssc_template.py`.
 11. If GraphQL returns validation errors, fix the full body and retry.
+12. Keep the helper scripts inside this plugin; do not copy them into the merchant repository unless the user explicitly asks for that.
 
 ## Commands
 
@@ -96,6 +97,7 @@ python3 scripts/update_ssc_template.py \
 - On first use, explain the `.env`, `.env.sample`, and token setup before making API calls.
 - Keep secrets in `.env`; never write tokens into committed files.
 - Do not add CLI flags for token or endpoint overrides; scripts must read configuration from workspace `.env`.
+- Do not copy helper scripts into the merchant repository unless the user explicitly asks for that.
 - Prefer full template bodies for remote updates to avoid truncating existing Liquid.
 - Use Tailwind CSS v4 classes for styling changes.
 - Use the SSCv2 component docs and Liquid docs before guessing at available tags, objects, or properties.

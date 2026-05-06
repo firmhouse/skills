@@ -8,7 +8,7 @@
       "name": "firmhouse",
       "source": {
         "source": "local",
-        "path": "."
+        "path": "./plugins/firmhouse"
       },
       "policy": {
         "installation": "AVAILABLE",

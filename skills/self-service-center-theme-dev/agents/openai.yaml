@@ -1,0 +1,4 @@
+interface:
+  display_name: "SSC Theme Dev"
+  short_description: "Edit Firmhouse SSC templates"
+  default_prompt: "Use $self-service-center-theme-dev to inspect or update a Firmhouse Self Service Center template for this merchant workspace."
